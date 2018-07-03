@@ -2,7 +2,7 @@
  * @Author: kael 
  * @Date: 2018-02-14 17:35:48 
  * @Last Modified by: kael
- * @Last Modified time: 2018-07-03 23:18:49
+ * @Last Modified time: 2018-07-03 23:53:38
  */
 
 const assert = require('assert');
@@ -39,6 +39,9 @@ describe('正则表达式', () => {
       'iigg',
       'igig',
       'gmigig',
+      'kdkdk',
+      'iiiiiimmmmmmmmgggggggggggggg',
+      'iiiiiimmmiiiiiiimmmmmgggggggggggggg',
     ].forEach((str) => {
       assert.ok(!RegExps.case1(str));
     });
