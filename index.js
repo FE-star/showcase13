@@ -2,7 +2,7 @@
  * @Author: kael 
  * @Date: 2018-02-14 17:50:28 
  * @Last Modified by: kael
- * @Last Modified time: 2018-07-01 15:52:39
+ * @Last Modified time: 2018-07-03 23:18:10
  */
 
 function escapeRegExp(string) {
@@ -11,8 +11,9 @@ function escapeRegExp(string) {
 
 module.exports = {
   // lookaround
+  // https://github.com/FE-star/2018.6/issues/13
   case1: (str) => {
-    return /^(?!([img])(?=.*\1))[img]+$/.test(str);
+    return /^(([img])(?!.*\2))+$/.test(str);
   },
   case2: () => {
     console.log('\t----------------------------');
