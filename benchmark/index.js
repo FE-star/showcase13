@@ -2,7 +2,7 @@
  * @Author: kael 
  * @Date: 2018-07-03 23:38:32 
  * @Last Modified by: kael
- * @Last Modified time: 2018-07-03 23:54:07
+ * @Last Modified time: 2018-07-17 18:27:33
  */
 
 const main = require('..');
@@ -38,14 +38,18 @@ const list = [
 
 function run(name, times, fn) {
   console.time(name);
-  while (times--) fn();
+  while (times--) {
+    list.forEach(str => {
+      fn(str);
+    });
+  }
   console.timeEnd(name);
 }
 
 const REG = main.IMG_REGEXP;
 const FN = main.IMG_FN
 
-let times_max = 9;
+let times_max = 8;
 while (times_max--) {
   let times = parseFloat(`1e` + times_max);
   console.log(`times:`, times);

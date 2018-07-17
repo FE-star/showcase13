@@ -2,13 +2,12 @@
  * @Author: kael 
  * @Date: 2018-02-14 17:50:28 
  * @Last Modified by: kael
- * @Last Modified time: 2018-07-03 23:53:02
+ * @Last Modified time: 2018-07-17 18:26:48
  */
 
 const IMG_REGEXP = /^(([img])(?!.*\2))+$/;
 
 function IMG_FN(str) {
-  str = '' + str;
   let l = str.length;
   if (l === 0 || l > 3) return false;
   let temp = {
@@ -18,8 +17,8 @@ function IMG_FN(str) {
   };
   for (let i = 0; i < l; i++) {
     let char = str[i];
-    if (typeof temp[char] === 'undefined') return false;
-    if ((temp[char] += 1) > 1) return false;
+    if (temp[char] !== 0) return false;
+    temp[char] = 1;
   }
   return true;
 }
